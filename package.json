@@ -1,0 +1,22 @@
+{
+  "name": "inverted-index",
+  "version": "1.0.0",
+  "description": "This is an Application that implements an inverted index for a list of books",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andela-aawa/inverted-index.git"
+  },
+  "author": "Awa Assahna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andela-aawa/inverted-index/issues"
+  },
+  "homepage": "https://github.com/andela-aawa/inverted-index#readme",
+  "dependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
