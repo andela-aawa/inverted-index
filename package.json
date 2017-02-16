@@ -18,5 +18,12 @@
   "homepage": "https://github.com/andela-aawa/inverted-index#readme",
   "dependencies": {
     "nodemon": "^1.11.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb-base": "^11.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "gulp": "^3.9.1"
   }
 }
