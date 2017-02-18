@@ -1,0 +1,24 @@
+<!DOCTYPE htmls>
+<html ng-app="InvertedIndexApp">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 FileReader API Demo: Text</title>  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body ng-controller="IndexCtrl">
+  <div id="page-wrapper">
+	<h1>Text File Reader</h1>
+<div ng-controller = "IndexCtrl">
+		<input type = "file" file-model = "booksFile"/>
+		<button ng-click = "uploadFile()">Upload File</button>
+</div>
+<ul>
+		<li ng-repeat="name in fileNames">
+			<div>{{name}}</div>
+		</li>
+</ul>
+	<pre id="fileDisplayArea"><pre>
+	</div>
+</body>
+</html>
