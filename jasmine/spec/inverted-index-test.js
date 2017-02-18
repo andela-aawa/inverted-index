@@ -13,7 +13,7 @@ describe('InvertedIndex Class', () => {
       expect(this.invertedIndex instanceof InvertedIndex).toBe(true);
     });
 
-    it('has default empty indexes object', () => {
+    it('has an indexes object to hold all indexes', () => {
       expect(typeof this.invertedIndex.indexes).toEqual('object');
     });
   });
@@ -62,9 +62,10 @@ describe('InvertedIndex Class', () => {
     it('should return object with search words', () => {
       const result = this.invertedIndex
                          .searchIndex('alice in wonderland', 'books');
-      expect(Object.keys(result)).toContain('alice');
-      expect(Object.keys(result)).toContain('wonderland');
-      expect(Object.keys(result)).toContain('in');
+      const words = Object.keys(result);
+      expect(words).toContain('alice');
+      expect(words).toContain('wonderland');
+      expect(words).toContain('in');
     });
   });
 });
