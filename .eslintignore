@@ -1,7 +1,0 @@
-/node_modules/*
-/jasmine/spec/*
-/jasmine/lib/**
-/src/styles/*
-gulpfile.js
-README.md
-package.json
