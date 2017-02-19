@@ -1,6 +1,9 @@
 /node_modules/*
-/jasmine/spec/*
+/jasmine/spec/app-test.js
+jasmine/spec/app-test.js
+/jasmine/spec/inverted-index-test.js
+jasmine/spec/inverted-index-test.js
 /jasmine/lib/**
-/src/styles/*
+gulpfile.js
 README.md
 package.json
