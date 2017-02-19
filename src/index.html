@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Inverted Index Application</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="./js/inverted-index.js"></script>
+  <link href="./css/style.css" rel="stylesheet">
+  <script type="text/javascript" src="./js/app.js"></script>
+</head>
+
+<body ng-app="IndexApp" ng-controller="indexCtrl">
+  <div>
+    <!-- Top navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Inverted Index</a>
+        </div>
+        <div class="searchwrap pull-right">
+          <input id="search" ng-model="terms" type="search">
+          <a class="btn btn-default btn-small" ng-click="search()">
+            <span class="glyphicon glyphicon-search"></span> Search
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- End navbar -->
+
+    <div class="container">
+      <div class="row">
+
+        <div>
+          <div class="col-xs-12 col-sm-8">
+
+          <div class="row">
+            <div class="fileUpload btn btn-primary inline">
+                <span>Upload</span>
+                <div class="file-field input-field">
+                  <input type="file" id="uploadJSON" class="upload" />
+                </div>
+              </div>
+          </div>
+            <div class="row">
+              <p>Select Book to create Index</p>
+              <div ng-repeat="title in titles">
+                <label for="{{title}}"> {{title}}</label>
+                 <button type="button" class="btn btn-default" ng-click="createIndex({{title}})">Create Index</button>
+              </div>
+            </div>
+
+            <div class="row">
+              <h1> Index Table</h1>
+              <div class='tableArea'>
+                <table class="table table-striped" ng-show="">
+                  <thead>
+                    <th> Showing Index for {{selectedFile}}</th>
+                    <tr>
+                      <th> Keywords</th>
+                      <th ng-repeat="">Document {{$index + 1}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="">
+                      <td class="divider"> {{key}}</td>
+                      <td ng-repeat="">
+                        <span ng-if="" class="ion-checkmark-round"></span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="row" ng-repeat="">
+              <div class='tableArea'>
+                <table class="table table-striped" ng-show="" ng-repeat="">
+                  <thead>
+                    <th> Search Results for {{key}}</th>
+                    <tr>
+                      <th> Keywords</th>
+                      <th ng-repeat="">Document {{fileNo + 1}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="">
+                      <td>{{key}}</td>
+                      <td ng-repeat="">
+                        <span ng-if="" class="ion-checkmark-round"></span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3" role="navigation">
+          <h3> About this App </h3>
+          <p>
+            This Inverted Index allows you to perform quick searches for a number of words. An inverted index consists of a list of all
+            the unique words that appear in any document, and for each word, a list of the documents in which it appears.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
