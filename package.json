@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/andela-aawa/inverted-index#readme",
   "dependencies": {
-    "nodemon": "^1.11.0"
+    "browserify": "^14.1.0",
+    "nodemon": "^1.11.0",
+    "vinyl-source-stream": "^1.1.0"
   },
   "devDependencies": {
     "browser-sync": "^2.18.8",
