@@ -50,7 +50,7 @@ describe('InvertedIndex Class', () => {
 
   describe('CreateIndex', () => {
     it('creates an index', () => {
-      expect(this.index.a).toEqual([0, 1]);
+      expect(this.index.a).toEqual([0, 1, 2]);
       expect(this.index.alice).toEqual([0]);
     });
   });
@@ -60,7 +60,7 @@ describe('InvertedIndex Class', () => {
     it('should return a particular index', () => {
       const index = this.invertedIndex.getIndex('books');
 
-      expect(index.a).toEqual([0, 1]);
+      expect(index.a).toEqual([0, 1, 2]);
       expect(index.alice).toEqual([0]);
     });
   });
