@@ -1,5 +1,6 @@
 
 # Inverted Index
+[![Build Status](https://travis-ci.org/andela-aawa/inverted-index.svg?branch=master)](https://travis-ci.org/andela-aawa/inverted-index)
 
 ## Introduction
 
