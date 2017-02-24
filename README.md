@@ -1,6 +1,8 @@
 
 # Inverted Index
 [![Build Status](https://travis-ci.org/andela-aawa/inverted-index.svg?branch=master)](https://travis-ci.org/andela-aawa/inverted-index)
+[![Coverage Status](https://coveralls.io/repos/github/andela-aawa/inverted-index/badge.svg?branch=chore%2F4%2Frewrite-tests)](https://coveralls.io/github/andela-aawa/inverted-index?branch=chore%2F4%2Frewrite-tests)
+[![Code Climate](https://codeclimate.com/github/andela-aawa/inverted-index/badges/gpa.svg)](https://codeclimate.com/github/andela-aawa/inverted-index)
 
 ## Introduction
 

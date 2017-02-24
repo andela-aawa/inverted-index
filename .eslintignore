@@ -7,3 +7,4 @@ jasmine/spec/inverted-index-test.js
 gulpfile.js
 README.md
 package.json
+karma.conf.js
