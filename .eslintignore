@@ -1,6 +1,9 @@
 /node_modules/*
-/jasmine/spec/*
+/jasmine/spec/app-test.js
+jasmine/spec/app-test.js
+/jasmine/spec/inverted-index-test.js
+jasmine/spec/inverted-index-test.js
 /jasmine/lib/**
-/src/styles/*
+/src/css/*
 README.md
 package.json
