@@ -18,21 +18,22 @@ class InvertedIndex {
    * @return {Array} array of string tokens
    */
   static getWords(text) {
-    return text.toLowerCase().replace(/[^\w\s]/g, '').split(/\s+/);
+    return text.toLowerCase()
+    .replace(/[^\w\s]/g, '').split(/\s+/);
   }
 
   /**
    * Create index
    * @function
-   * @param {string} indextitle
+   * @param {string} filename
    * @param {Array} data
    * @return {Object} index object
    */
-  createIndex(indextitle, data) {
+  createIndex(filename, data) {
     const dictionary = {};
 
     data.forEach((doc, arrayIndex) => {
-      const docWords = `${doc.title} + ' ' + ${doc.text}`;
+      const docWords = doc.text;
       const words = InvertedIndex.getWords(docWords);
 
       words.forEach((word) => {
@@ -46,34 +47,32 @@ class InvertedIndex {
       });
     });
 
-    this.indexes[indextitle] = dictionary;
-
-    return this.indexes[indextitle];
+    this.indexes[filename] = dictionary;
   }
 
   /**
    * Get a particular index
    * @function
-   * @param {String} indextitle
+   * @param {String} filename
    * @return {Object} index object
    */
-  getIndex(indextitle) {
-    return this.indexes[indextitle];
+  getIndex(filename) {
+    return this.indexes[filename];
   }
 
   /**
    * Search Index.
    * @function
    * @param {String} query query string
-   * @param {String} indextitle indextitle of index to be searched.
+   * @param {String} filename filename of index to be searched.
    * @returns {Object|String} search result object.
    */
-  searchIndex(query, indextitle) {
+  searchIndex(query, filename) {
     const queryWords = InvertedIndex.getWords(query);
-    const index = this.getIndex(indextitle);
+    const index = this.getIndex(filename);
 
     if (!index) {
-      return `Index with ${indextitle} does not exist.`;
+      return `Index with ${filename} does not exist.`;
     }
 
     const result = {};
