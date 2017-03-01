@@ -47,7 +47,10 @@ class InvertedIndex {
       });
     });
 
-    this.indexes[filename] = dictionary;
+    this.indexes[filename] = {
+      words: dictionary,
+      docCount: data.length
+    };
   }
 
   /**
@@ -75,15 +78,18 @@ class InvertedIndex {
       return `Index with ${filename} does not exist.`;
     }
 
-    const result = {};
+    const result = {
+      words: {},
+      docCount: index.docCount
+    };
 
     queryWords.forEach((word) => {
-      if (index[word]) {
-        result[word] = index[word];
+      if (index.words[word]) {
+        result.words[word] = index.words[word];
       }
     });
 
-    return Object.keys(result).length > 0 ?
+    return Object.keys(result.words).length > 0 ?
       result : 'no word found';
   }
 

@@ -40,10 +40,14 @@ describe('InvertedIndex Class', () => {
       expect(invertedIndex.getIndex('books2')).toBeTruthy();
     });
     it('creates the correct index', () => {
-      expect(invertedIndex.getIndex('books').a).toEqual([0, 1, 2]);
-      expect(invertedIndex.getIndex('books').alice).toEqual([0]);
-      expect(invertedIndex.getIndex('books2').brushing).toEqual([1]);
-      expect(invertedIndex.getIndex('books2').room).toEqual([0]);
+      expect(invertedIndex.getIndex('books').words.a).toEqual([0, 1, 2]);
+      expect(invertedIndex.getIndex('books').words.alice).toEqual([0]);
+      expect(invertedIndex.getIndex('books2').words.brushing).toEqual([1]);
+      expect(invertedIndex.getIndex('books2').words.room).toEqual([0]);
+    });
+    it('saves document length', () => {
+      expect(invertedIndex.getIndex('books').docCount).toEqual(3);
+      expect(invertedIndex.getIndex('books2').docCount).toEqual(2);
     });
   });
 
@@ -55,12 +59,15 @@ describe('InvertedIndex Class', () => {
     it('returns the exact result of the index', () => {
       invertedIndex.createIndex('books3', books3);
       expect(invertedIndex.getIndex('books3')).toEqual({
-        'by':[0,1], 
-        'malcolm':[0,1], 
-        'gladwell':[0,1],
-        'sequel':[1],
-        'to':[1],
-        'outliers':[1]
+        words:{
+          'by':[0,1], 
+          'malcolm':[0,1], 
+          'gladwell':[0,1],
+          'sequel':[1],
+          'to':[1],
+          'outliers':[1]
+        },
+        docCount: 2
       });
     });
   });
@@ -79,16 +86,25 @@ describe('InvertedIndex Class', () => {
     it('should return object with search words', () => {
       expect(invertedIndex.searchIndex('alice unusual', 'books'))
       .toEqual({
-        'alice': [0], 
-        'unusual': [1,2] 
+        words: {
+          'alice': [0], 
+          'unusual': [1,2] 
+        },
+        docCount: 3
       });
       expect(invertedIndex.searchIndex('room', 'books2'))
       .toEqual({
-        'room': [0]
+        words: {
+          'room': [0]
+        },
+        docCount: 2
       });
       expect(invertedIndex.searchIndex('brushing', 'books2'))
       .toEqual({
+        words: {
         'brushing': [1]
+        },
+        docCount: 2
       });
     });
   });
