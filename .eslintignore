@@ -1,9 +1,11 @@
 /node_modules/*
-/jasmine/spec/app-test.js
-jasmine/spec/app-test.js
+/jasmine/app-test.js
+jasmine/app-test.js
 /jasmine/spec/inverted-index-test.js
 jasmine/spec/inverted-index-test.js
 /jasmine/lib/**
+gulpfile.js
 /src/css/*
 README.md
 package.json
+karma.conf.js
