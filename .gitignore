@@ -1,2 +1,3 @@
 /node_modules
 coverage/
+jasmine/app-test.js
