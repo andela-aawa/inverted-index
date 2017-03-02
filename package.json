@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/andela-aawa/inverted-index#readme",
   "dependencies": {
+    "express": "^4.15.0",
     "nodemon": "^1.11.0"
   },
   "devDependencies": {
