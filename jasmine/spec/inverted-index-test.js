@@ -78,9 +78,9 @@ describe('InvertedIndex Class', () => {
         .toEqual('Index with movies does not exist.');
     });
 
-    it('should return "not found" for words not in index', () => {
-      expect(invertedIndex.searchIndex('', 'books'))
-        .toEqual('no word found');
+    it('should return "{}" for words not in index', () => {
+      expect(invertedIndex.searchIndex('', 'books').words)
+        .toEqual({});
     });
 
     it('should return object with search words', () => {
@@ -105,6 +105,34 @@ describe('InvertedIndex Class', () => {
         'brushing': [1]
         },
         docCount: 2
+      });
+    });
+  });
+
+  describe('Search All Indexes', () => {
+
+    it('should return object with search words', () => {
+      console.log(invertedIndex.searchAllIndexes('alice unusual outliers gladwell'))
+      expect(invertedIndex.searchAllIndexes('alice unusual outliers gladwell'))
+      .toEqual({
+        books: {
+          words: {
+            'alice': [0], 
+            'unusual': [1,2] 
+          },
+            docCount: 3
+        },
+        books2: {
+          words: {},
+          docCount: 2
+        },
+        books3: {
+          words: {
+            'outliers': [1], 
+            'gladwell': [0,1] 
+          },
+            docCount: 2
+        },
       });
     });
   });
