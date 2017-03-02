@@ -75,3 +75,11 @@ h1 {
     filter: alpha(opacity=0);
 }
 
+.index-list a i {
+    margin-right:10px;
+    pointer-events:none
+}
+.index-list a.active {
+    background:#fff;
+    box-shadow:0 2px 4px rgba(50,50,93,.1)
+}

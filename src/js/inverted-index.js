@@ -88,9 +88,23 @@ class InvertedIndex {
         result.words[word] = index.words[word];
       }
     });
+    return result;
+  }
 
-    return Object.keys(result.words).length > 0 ?
-      result : 'no word found';
+/**
+   * Search Index.
+   * @function
+   * @param {String} query query string
+   * @returns {Object|String} search result object.
+   */
+  searchAllIndexes(query) {
+    const result = {};
+
+    Object.keys(this.indexes).forEach((filename) => {
+      result[filename] = this.searchIndex(query, filename);
+    });
+
+    return result;
   }
 
 }
