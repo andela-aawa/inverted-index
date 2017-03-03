@@ -46,19 +46,19 @@
 
             <div class="row">
               <div>
-                <p ng-show="indexTitles.length > 0">Click to Create Index</p>
+                <p ng-show="filenames.length > 0">Click to Create Index</p>
                 <ul class="index-list">
-                  <li ng-repeat="title in indexTitles | orderBy:title">
-                    <a href="#" ng-class="{active: (title === indexTitle)}" ng-click="setIndex(title)"><i class="ion-ios-albums-outline"></i> {{ title }}</a>
+                  <li ng-repeat="title in filenames | orderBy:title">
+                    <a href="#" ng-class="{active: (title === filename)}" ng-click="setIndex(title)"><i class="ion-ios-albums-outline"></i> {{ title }}</a>
                   </li>
                 </ul>
               </div>
-              <h4 ng-show="indexTitles.length < 1"> Upload and Select files to Create Index</h4>
+              <h4 ng-show="filenames.length < 1"> Upload and Select files to Create Index</h4>
               <p style="margin-bottom: 20px;"></p>
               <div class='tableArea'>
                 <table class="table table-striped" ng-if="showIndex">
                   <thead>
-                    <th> Showing Index for {{indexTitle}}</th>
+                    <th> Showing Index for {{filename}}</th>
                     <tr>
                       <th> Keywords</th>
                       <th ng-repeat="doc_num in [] | range:index.docCount"> doc_{{doc_num + 1}}</th>
@@ -76,11 +76,11 @@
               </div>
 
                <div ng-if="showSearchResults">
-                  <div ng-repeat="(indexTitle, data) in searchResults">
+                  <div ng-repeat="(filename, data) in searchResults">
                       <div class='tableArea'>
                         <table class="table table-striped">
                           <thead>
-                            <th> Showing Index for {{indexTitle}}</th>
+                            <th> Showing Index for {{filename}}</th>
                             <tr>
                               <th> Keywords</th>
                               <th ng-repeat="doc_num in [] | range:data.docCount"> doc_{{doc_num + 1}}</th>

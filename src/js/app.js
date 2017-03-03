@@ -5,8 +5,8 @@ angular.module('IndexApp', [])
 .controller('IndexCtrl', ['$scope', ($scope) => {
   const index = new InvertedIndex();
 
-  $scope.indexTitles = [];
-  $scope.indexTitle = null;
+  $scope.filenames = [];
+  $scope.filename = null;
   $scope.message = '';
   $scope.docCount = 0;
   $scope.searchResults = null;
@@ -47,7 +47,7 @@ angular.module('IndexApp', [])
 
         // set currentIndex
         $scope.$apply(() => {
-          $scope.indexTitles.push(title);
+          $scope.filenames.push(title);
         });
       } catch (ex) {
         $scope.setMessage(`${file.name} Invalid JSON format.`);
@@ -61,7 +61,7 @@ angular.module('IndexApp', [])
   $scope.setIndex = (title) => {
     $scope.message = '';
     $scope.index = index.getIndex(title);
-    $scope.indexTitle = title;
+    $scope.filename = title;
     $scope.showIndex = true;
     $scope.showSearchResults = false;
   };
