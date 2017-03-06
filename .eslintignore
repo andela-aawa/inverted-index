@@ -1,8 +1,6 @@
 /node_modules/*
 /jasmine/app-test.js
 jasmine/app-test.js
-/jasmine/spec/inverted-index-test.js
-jasmine/spec/inverted-index-test.js
 /jasmine/lib/**
 gulpfile.js
 /src/css/*
