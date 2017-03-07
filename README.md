@@ -27,13 +27,19 @@ Inverted index takes a JSON array of text objects and creates an index from the 
 
 * Searching of a specific JSON file or all indexed JSON files.
 
+## Usage
+
+You can access the app on heroku at
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://invertedindex-aawa-develop.herokuapp.com/)
+
+Alternatively, You may clone the repository and run the app locally to use.
 
 ## Local Installation Guide
 * Clone the repository
 * Install the dependencies using  `npm install`
-* Run `gulp loadApp` to start the application.
+* Run `node server.js` to start the application.
 * The app will start on your local server.
-* Run tests with: `gulp testApp`
+* Run tests with: `karma start karma.conf.js`
 
 ## Technologies
 
@@ -46,8 +52,8 @@ Inverted index takes a JSON array of text objects and creates an index from the 
 
 ## Contributing
 
-* Fork this repositry to your account.
-* Clone your repositry: git clone git@github.com:your-username/inverted-index.git
+* Fork this repository to your account.
+* Clone your repository: git clone git@github.com:your-username/inverted-index.git
 * Create your feature branch: git checkout -b new-feature
 * Commit your changes: git commit -m "did something"
 * Push to the remote branch: git push origin new-feature
