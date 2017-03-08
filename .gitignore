@@ -1,4 +1,4 @@
 /node_modules
 coverage/
-jasmine/lib/
 jasmine/app-test.js
+.DS_Store

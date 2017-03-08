@@ -4,7 +4,7 @@
   "env": {
     "node": true,
     "es6": true,
-    "mocha": true
+    "jasmine": true
   },
   "rules": {
     "one-var": 0,
@@ -15,8 +15,8 @@
     "consistent-return": 0,
     "no-param-reassign": 0,
     "comma-dangle": 0,
-    "import/no-unresolved": [2, { "commonjs": true }],
     "curly": ["error", "multi-line"],
+    "import/no-unresolved": 0,
     "no-shadow": ["error", { "allow": ["req", "res", "err"] }],
     "valid-jsdoc": ["error", {
       "requireReturn": true,

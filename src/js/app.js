@@ -36,15 +36,11 @@ angular.module('IndexApp', [])
         $scope.setMessage('');
         const data = JSON.parse(e.target.result);
 
-        // Validate format
-        if (!(data[0] && data[0].title)) {
-          $scope.setMessage(`${file.name} has Invalid JSON format`);
-          return;
-        }
+        // validate file
+        InvertedIndex.validate(data);
 
-        // Create index
+        // Create Index
         index.createIndex(title, data);
-
         // set currentIndex
         $scope.$apply(() => {
           $scope.filenames.push(title);
